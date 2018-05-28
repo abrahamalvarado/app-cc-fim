@@ -12,6 +12,7 @@ import { User } from '../../models/user';
 export class LoginComponent {
   public title = 'login';
   public user: any;
+  public loginError: any;
   constructor(private auth: AuthService,  private router: Router){
     this.title = 'Iniciar sesión';
     this.user = new User('','','','','');
@@ -28,12 +29,12 @@ export class LoginComponent {
       password: data.password
     };
     this.auth.signInWithEmail(credentials)
-      /*.then(
-        () => this.navCtrl.parent.select(0),
+      .then(
+        () => this.router.navigate(['home']),
         error => this.loginError = error.message
-      );*/
+      );
       console.log(credentials);
-      this.router.navigate(['home'])
+      
   }
   
 }
