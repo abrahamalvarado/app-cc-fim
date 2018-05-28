@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, FormControl, FormGroup, FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { routing, appRoutingProviders } from './app.routing';
 
 //import modules
 import { AuthModule } from './auth-module/auth.module'
@@ -36,9 +37,11 @@ export const firebaseConfig = {
     ReactiveFormsModule,
     AuthModule,
     AngularFireModule.initializeApp(firebaseConfig.fire),
+    routing
   ],
   providers: [
     AngularFireDatabase,
+    appRoutingProviders
   ],
   bootstrap: [AppComponent]
 })

@@ -12,7 +12,7 @@ import { User } from '../../models/user';
 export class LoginComponent {
   public title = 'login';
   public user: any;
-  constructor(private auth: AuthService){
+  constructor(private auth: AuthService,  private router: Router){
     this.title = 'Iniciar sesión';
     this.user = new User('','','','','');
   }
@@ -33,6 +33,7 @@ export class LoginComponent {
         error => this.loginError = error.message
       );*/
       console.log(credentials);
+      this.router.navigate(['home'])
   }
   
 }
