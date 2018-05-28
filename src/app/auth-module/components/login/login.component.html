@@ -1,1 +1,20 @@
 <h1>{{ title }}</h1>
+<form class="form" #loginForm='ngForm' (ngSubmit)='login(loginForm)'>
+    <p>
+    <label for="email"><small><strong> Correo electrónico</strong></small></label>
+    <i class="fa fa-check-circle check" *ngIf="email.valid"></i>
+    <i class="fa fa-exclamation-circle uncheck" *ngIf="email.invalid && email.touched"></i>
+    <input class="form-control" type="email" name="email" #email="ngModel" [(ngModel)]="user.email" required email/>
+    <span class="aler alert-danger" id="alert-msg" *ngIf="!email.valid && email.touched">Dirección de correo obligatoria</span>
+    
+    </p>
+    <p>
+    <label for="password"><small><strong>Tu contraseña</strong></small></label>
+    <i class="fa fa-check-circle check" *ngIf="password.valid"></i>
+    <i class="fa fa-exclamation-circle uncheck" *ngIf="password.invalid && password.touched"></i>
+    <input class="form-control" type="password" name="password" #password [(ngModel)]="user.password" required/>
+    </p>
+
+    <button type="submit" id="login-button" class="btn btn-warning" [disabled]="!loginForm.valid"><small><strong>Ingresar a tu cuenta</strong></small></button>
+
+</form>
