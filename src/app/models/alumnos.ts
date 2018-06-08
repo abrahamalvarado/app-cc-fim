@@ -1,5 +1,5 @@
 export interface Alumno {
-  id?: any;
+  key?: any;
   numcontrol?: any;
   name?: any;
   parentlastname?: any;

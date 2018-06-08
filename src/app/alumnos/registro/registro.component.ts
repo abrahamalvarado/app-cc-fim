@@ -17,7 +17,7 @@ export class RegistroAlumnosComponent implements OnInit {
 
   constructor(private authService: AuthService, private alumnoService: AlumnoService, private router: Router) { 
     this.alumno = {
-      id: '',
+      key: '',
       numcontrol: '',
       name: '',
       parentlastname: '',
@@ -33,7 +33,7 @@ export class RegistroAlumnosComponent implements OnInit {
   
   register(alumno){
     this.alumnoService.nuevoAlumno(this.alumno);
-    this.router.navigate['alumnos'];
+    this.router.navigate(["alumnos"]);
     console.log(this.alumno);
   }
   

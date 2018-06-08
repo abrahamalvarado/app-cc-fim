@@ -38,5 +38,32 @@ export class AlumnoService {
     return promise
   }
 
+  getAlumno(key){
+    let promise = new Promise((resolve, reject) =>{
+      firebase.database().ref('/Alumnos/').orderByKey().equalTo(key).on('value', (snapshot) => {
+        try{
+          resolve(this.snapshotToArray(snapshot));
+        }catch(err){
+          reject(err)
+        }
+      });
+    })
+    return promise;
+  }
+
+  updateAlumno(alumno){
+    let promise = new Promise((resolve, reject) =>{
+      firebase.database().ref('/Alumnos/').equalTo(alumno.key).on('value', (snapshot) => {
+        try{
+          this.afd.list('/Alumnos/').update(alumno.key,alumno);
+          resolve('Alumno actualizado');
+        }catch(err){
+          reject(err)
+        }
+      });
+    })
+    return promise;
+  }
+
   
 }

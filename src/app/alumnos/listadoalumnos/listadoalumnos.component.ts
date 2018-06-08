@@ -12,17 +12,14 @@ import { Alumno } from '../../models/alumnos'
 })
 export class ListadoalumnosComponent implements OnInit {
   public alumnos: any;
-  constructor(private alumnoService: AlumnoService) { 
-    this.alumnoService.getAlumnos().then(response =>{
-      this.alumnos = response;
-      console.log(this.alumnos);
-    }).catch(err =>{
-      console.log(err);
-    });
-
-  }
+  constructor(private alumnoService: AlumnoService) { }
 
   ngOnInit() {
+    this.alumnoService.getAlumnos().then(response =>{
+      this.alumnos = response;
+    }).catch(err =>{
+      console.log(err);
+    })
   }
 
 }

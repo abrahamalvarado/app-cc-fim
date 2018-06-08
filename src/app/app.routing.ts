@@ -11,6 +11,7 @@ import { ListadoalumnosComponent } from './alumnos/listadoalumnos/listadoalumnos
 import { ListadoequiposComponent } from './equipos/listadoequipos/listadoequipos.component';
 import { ListadoserviciosComponent } from './servicios/listadoservicios/listadoservicios.component';
 import { RegistroAlumnosComponent } from './alumnos/registro/registro.component';
+import { ActualizarAlumnosComponent } from './alumnos/actualizar/actualizar.component';
 
 
 const appRoutes: Routes = [
@@ -19,10 +20,11 @@ const appRoutes: Routes = [
   { path: 'equipos', component: ListadoequiposComponent},
   { path: 'servicios', component: ListadoserviciosComponent},
   { path: 'registroalumno', component: RegistroAlumnosComponent},
-  {path: '', component: InicioComponent},
-  {path: '', redirectTo: 'home', pathMatch: 'full'},
-  {path: 'home', component: InicioComponent},
-  {path: 'login', component: LoginComponent},
+  { path: 'editaralumno/:id', component: ActualizarAlumnosComponent},
+  { path: '', component: InicioComponent},
+  { path: '', redirectTo: 'home', pathMatch: 'full'},
+  { path: 'home', component: InicioComponent},
+  { path: 'login', component: LoginComponent},
   { path: '**', component: InicioComponent},
 ];
 
