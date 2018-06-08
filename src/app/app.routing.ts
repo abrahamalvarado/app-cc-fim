@@ -10,6 +10,7 @@ import { ListadousuariosComponent } from './usuarios/listadousuarios/listadousua
 import { ListadoalumnosComponent } from './alumnos/listadoalumnos/listadoalumnos.component';
 import { ListadoequiposComponent } from './equipos/listadoequipos/listadoequipos.component';
 import { ListadoserviciosComponent } from './servicios/listadoservicios/listadoservicios.component';
+import { RegistroAlumnosComponent } from './alumnos/registro/registro.component';
 
 
 const appRoutes: Routes = [
@@ -17,6 +18,7 @@ const appRoutes: Routes = [
   { path: 'alumnos', component: ListadoalumnosComponent},
   { path: 'equipos', component: ListadoequiposComponent},
   { path: 'servicios', component: ListadoserviciosComponent},
+  { path: 'registroalumno', component: RegistroAlumnosComponent},
   {path: '', component: InicioComponent},
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: InicioComponent},

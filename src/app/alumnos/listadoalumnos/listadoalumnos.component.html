@@ -30,21 +30,27 @@
           <tr>
             <th>#</th>
             <th>Nombre</th>
+            <th>Appelido</th>
             <th>Correo</th>
-            <th>Teléfono</th>
+            <th>Num de control</th>
+            <th>Grupo</th>
+            <th>Carrera</th>
             <th>Acciones</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>Abraham</td>
-            <td>abraham-alvarado@hotmail.com</td>
-            <td>6681562126</td>
+          <tr *ngFor="let alumno of alumnos; let i = index">
+            <td>{{i}}</td>
+            <td>{{alumno.name}}</td>
+            <td>{{alumno.parentlastname}}</td>
+            <td>{{alumno.email}}</td>
+            <td>{{alumno.numcontrol}}</td>
+            <td>{{alumno.group}}</td>
+            <td>{{alumno.class}}</td>
             <td><div>
-                <a class="btn btn-primary btn-rounded btn-xs" title="Editar" routerLink="/editaralumno/{{ alumno.idAlumno"><i class="fa fa-pencil"></i></a>
-                <a class="btn btn-danger btn-rounded btn-xs" (click)="eliminarAlumno(alumno.idAlumno)" title="Eliminar"><i class="fa fa-trash"></i></a>
-              </div></td>
+                <a class="btn btn-primary btn-rounded btn-xs" title="Editar" routerLink="/editaralumno/{{ alumno.key }}"><i class="fa fa-pencil"></i></a>
+                <a class="btn btn-danger btn-rounded btn-xs" (click)="eliminarAlumno(alumno.key)" title="Eliminar"><i class="fa fa-trash"></i></a>
+            </div></td>
           </tr>
         </tbody>
       </table>

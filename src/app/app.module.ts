@@ -14,10 +14,14 @@ import { ListadousuariosComponent } from './usuarios/listadousuarios/listadousua
 import { ListadoalumnosComponent } from './alumnos/listadoalumnos/listadoalumnos.component';
 import { ListadoequiposComponent } from './equipos/listadoequipos/listadoequipos.component';
 import { ListadoserviciosComponent } from './servicios/listadoservicios/listadoservicios.component';
+import { RegistroAlumnosComponent } from './alumnos/registro/registro.component';
 
 // server modules
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
+
+//services
+import { AlumnoService } from './services/alumno.service'
 
 export const firebaseConfig = {
   fire: {
@@ -38,7 +42,8 @@ export const firebaseConfig = {
     ListadousuariosComponent,
     ListadoalumnosComponent,
     ListadoequiposComponent,
-    ListadoserviciosComponent
+    ListadoserviciosComponent,
+    RegistroAlumnosComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +55,8 @@ export const firebaseConfig = {
   ],
   providers: [
     AngularFireDatabase,
-    appRoutingProviders
+    appRoutingProviders,
+    AlumnoService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,0 +1,70 @@
+<h1>Registro de Alumnos</h1>
+<form class="form" #registerForm='ngForm' (ngSubmit)='register(registerForm)'>
+    <p>
+        <label for="email"><small><strong>Nombre</strong></small></label>
+        <i class="fa fa-check-circle check" *ngIf="name.valid"></i>
+        <i class="fa fa-exclamation-circle uncheck" *ngIf="name.invalid && name.touched"></i>
+        <input class="form-control" type="text" name="name" #name="ngModel" [(ngModel)]="alumno.name" required/>
+        <span class="aler alert-danger" id="alert-msg" *ngIf="!email.valid && email.touched">Nombre obligatorio</span>
+        </p>
+    <p>
+    <p>
+      <label for="email"><small><strong>Apellido Paterno</strong></small></label>
+      <i class="fa fa-check-circle check" *ngIf="parentlastname.valid"></i>
+      <i class="fa fa-exclamation-circle uncheck" *ngIf="parentlastname.invalid && parentlastname.touched"></i>
+      <input class="form-control" type="text" name="parentlastname" #parentlastname="ngModel" [(ngModel)]="alumno.parentlastname" required/>
+      <span class="aler alert-danger" id="alert-msg" *ngIf="!parentlastname.valid && parentlastname.touched">Apellido Paterno obligatorio</span>
+    </p>
+    <p>
+        <label for="email"><small><strong>Apellido Materno</strong></small></label>
+        <i class="fa fa-check-circle check" *ngIf="motherlastname.valid"></i>
+        <i class="fa fa-exclamation-circle uncheck" *ngIf="motherlastname.invalid && motherlastname.touched"></i>
+        <input class="form-control" type="text" name="motherlastname" #motherlastname="ngModel" [(ngModel)]="alumno.motherlastname" required/>
+        <span class="aler alert-danger" id="alert-msg" *ngIf="!motherlastname.valid && motherlastname.touched">Apellido Materno obligatorio</span>
+      </p>
+    <p>
+    <label for="email"><small><strong> Correo electrónico</strong></small></label>
+    <i class="fa fa-check-circle check" *ngIf="email.valid"></i>
+    <i class="fa fa-exclamation-circle uncheck" *ngIf="email.invalid && email.touched"></i>
+    <input class="form-control" type="email" name="email" #email="ngModel" [(ngModel)]="alumno.email" required email/>
+    <span class="aler alert-danger" id="alert-msg" *ngIf="!email.valid && email.touched">Dirección de correo obligatoria</span>
+    
+    </p>
+    <p>
+    <label for="password"><small><strong>Numero de Control</strong></small></label>
+    <i class="fa fa-check-circle check" *ngIf="numcontrol.valid"></i>
+    <i class="fa fa-exclamation-circle uncheck" *ngIf="numcontrol.invalid && numcontrol.touched"></i>
+    <input class="form-control" type="text" name="numcontrol" #numcontrol="ngModel" [(ngModel)]="alumno.numcontrol" required/>
+    <span class="aler alert-danger" id="alert-msg" *ngIf="!numcontrol.valid && numcontrol.touched">Número de control obligatorio</span>
+    </p>
+    <p>
+        <label for="password"><small><strong>Grupo</strong></small></label>
+        <i class="fa fa-check-circle check" *ngIf="group.valid"></i>
+        <i class="fa fa-exclamation-circle uncheck" *ngIf="group.invalid && group.touched"></i>
+        <input class="form-control" type="text" name="group" #group="ngModel" [(ngModel)]="alumno.group" required/>
+        <span class="aler alert-danger" id="alert-msg" *ngIf="!group.valid && group.touched">Grupo obligatorio</span>
+    </p>
+    <p>
+        <label for="password"><small><strong>Carrera</strong></small></label>
+        <i class="fa fa-check-circle check" *ngIf="class.valid"></i>
+        <i class="fa fa-exclamation-circle uncheck" *ngIf="class.invalid && class.touched"></i>
+        <input class="form-control" type="text" name="class" #class="ngModel" [(ngModel)]="alumno.class" required/>
+        <span class="aler alert-danger" id="alert-msg" *ngIf="!class.valid && class.touched">Ingrese la carrera</span>
+    </p>
+    <p>
+        <label for="password"><small><strong>Semestre</strong></small></label>
+        <i class="fa fa-check-circle check" *ngIf="period.valid"></i>
+        <i class="fa fa-exclamation-circle uncheck" *ngIf="period.invalid && period.touched"></i>
+        <input class="form-control" type="text" name="period" #period="ngModel" [(ngModel)]="alumno.period" required/>
+        <span class="aler alert-danger" id="alert-msg" *ngIf="!period.valid && period.touched">Ingrese el semestre en curso</span>
+    </p>
+    <p>
+        <label for="password"><small><strong>Aula</strong></small></label>
+        <i class="fa fa-check-circle check" *ngIf="classroom.valid"></i>
+        <i class="fa fa-exclamation-circle uncheck" *ngIf="classroom.invalid && classroom.touched"></i>
+        <input class="form-control" type="text" name="classroom" #classroom="ngModel" [(ngModel)]="alumno.classroom" required/>
+        <span class="aler alert-danger" id="alert-msg" *ngIf="!classroom.valid && classroom.touched">Ingrese el aula</span>
+    </p>
+    <button type="submit" id="register-button" class="btn btn-warning" [disabled]="!registerForm.valid"><small><strong>Registrar</strong></small></button>
+
+</form>
