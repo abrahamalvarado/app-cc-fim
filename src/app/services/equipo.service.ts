@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
 import * as firebase from 'firebase';
-import { Alumno } from '../models/alumno'
+import { Equipo } from '../models/equipo'
 
 @Injectable()
-export class AlumnoService {
+export class EquipoService {
   private db = firebase.database();
-  public alumno: Alumno;
+  public equipo: Equipo;
 
   constructor(public afd: AngularFireDatabase) {}
 
-  nuevoAlumno(alumno) {
-    this.afd.list('/Alumnos/').push(alumno);    
+  nuevoEquipo(equipo) {
+    this.afd.list('/Equipos/').push(equipo);    
   }
 
   snapshotToArray(snapshot){
@@ -24,9 +24,9 @@ export class AlumnoService {
     return returnArr;
   }
 
-  getAlumnos(){
+  getEquipos(){
     let promise = new Promise((resolve, reject) =>{
-      firebase.database().ref('/Alumnos/').on('value', (snapshot) => {
+      firebase.database().ref('/Equipos/').on('value', (snapshot) => {
         try{
           resolve(this.snapshotToArray(snapshot));
         }catch(err){
@@ -38,9 +38,9 @@ export class AlumnoService {
     return promise
   }
 
-  getAlumno(key){
+  getEquipo(key){
     let promise = new Promise((resolve, reject) =>{
-      firebase.database().ref('/Alumnos/').orderByKey().equalTo(key).on('value', (snapshot) => {
+      firebase.database().ref('/Equipos/').orderByKey().equalTo(key).on('value', (snapshot) => {
         try{
           resolve(this.snapshotToArray(snapshot));
         }catch(err){
@@ -51,12 +51,12 @@ export class AlumnoService {
     return promise;
   }
 
-  updateAlumno(alumno){
+  updateEquipo(equipo){
     let promise = new Promise((resolve, reject) =>{
-      firebase.database().ref('/Alumnos/').equalTo(alumno.key).on('value', (snapshot) => {
+      firebase.database().ref('/Equipos/').equalTo(equipo.key).on('value', (snapshot) => {
         try{
-          this.afd.list('/Alumnos/').update(alumno.key,alumno);
-          resolve('Alumno actualizado');
+          this.afd.list('/Equipos/').update(equipo.key, equipo);
+          resolve('Equipo actualizado');
         }catch(err){
           reject(err)
         }

@@ -1,0 +1,70 @@
+<h1>Registro de Equipos</h1>
+<form class="form" #registerForm='ngForm' (ngSubmit)='register(registerForm)'>
+    <p>
+        <label for="name"><small><strong>Nombre</strong></small></label>
+        <i class="fa fa-check-circle check" *ngIf="name.valid"></i>
+        <i class="fa fa-exclamation-circle uncheck" *ngIf="name.invalid && name.touched"></i>
+        <input class="form-control" type="text" name="name" #name="ngModel" [(ngModel)]="equipo.name" required/>
+        <span class="aler alert-danger" id="alert-msg" *ngIf="!name.valid && name.touched">Nombre obligatorio</span>
+        </p>
+    <p>
+    <p>
+      <label for="brand"><small><strong>Marca</strong></small></label>
+      <i class="fa fa-check-circle check" *ngIf="brand.valid"></i>
+      <i class="fa fa-exclamation-circle uncheck" *ngIf="brand.invalid && brand.touched"></i>
+      <input class="form-control" type="text" name="brand" #brand="ngModel" [(ngModel)]="equipo.brand" required/>
+      <span class="aler alert-danger" id="alert-msg" *ngIf="!brand.valid && brand.touched">Ingrese la marca del equipo</span>
+    </p>
+    <p>
+        <label for="model"><small><strong>Modelo</strong></small></label>
+        <i class="fa fa-check-circle check" *ngIf="model.valid"></i>
+        <i class="fa fa-exclamation-circle uncheck" *ngIf="model.invalid && model.touched"></i>
+        <input class="form-control" type="text" name="model" #model="ngModel" [(ngModel)]="equipo.model" required/>
+        <span class="aler alert-danger" id="alert-msg" *ngIf="!model.valid && model.touched">Ingrese el modelo</span>
+      </p>
+    <p>
+    <label for="type"><small><strong>Tipo</strong></small></label>
+    <i class="fa fa-check-circle check" *ngIf="type.valid"></i>
+    <i class="fa fa-exclamation-circle uncheck" *ngIf="type.invalid && type.touched"></i>
+    <input class="form-control" type="text" name="type" #type="ngModel" [(ngModel)]="equipo.type" required/>
+    <span class="aler alert-danger" id="alert-msg" *ngIf="!type.valid && type.touched">Ingrese el tipo de hardware</span>
+    
+    </p>
+    <p>
+    <label for="serial"><small><strong>Serial</strong></small></label>
+    <i class="fa fa-check-circle check" *ngIf="serial.valid"></i>
+    <i class="fa fa-exclamation-circle uncheck" *ngIf="serial.invalid && serial.touched"></i>
+    <input class="form-control" type="text" name="serial" #serial="ngModel" [(ngModel)]="equipo.serial"/>
+    <span class="aler alert-danger" id="alert-msg" *ngIf="!serial.valid && serial.touched">Ingrese el serial del fabricante</span>
+    </p>
+    <p>
+        <label for="date"><small><strong>fecha</strong></small></label>
+        <i class="fa fa-check-circle check" *ngIf="date.valid"></i>
+        <i class="fa fa-exclamation-circle uncheck" *ngIf="date.invalid && date.touched"></i>
+        <input class="form-control" type="text" name="date" #date="ngModel" [(ngModel)]="equipo.date" required/>
+        <span class="aler alert-danger" id="alert-msg" *ngIf="!date.valid && date.touched">Ingrese fecha de adquisición</span>
+    </p>
+    <p>
+        <label for="place"><small><strong>Ubicación</strong></small></label>
+        <i class="fa fa-check-circle check" *ngIf="place.valid"></i>
+        <i class="fa fa-exclamation-circle uncheck" *ngIf="place.invalid && place.touched"></i>
+        <input class="form-control" type="text" name="place" #place="ngModel" [(ngModel)]="equipo.place" required/>
+        <span class="aler alert-danger" id="alert-msg" *ngIf="!place.valid && place.touched">Ingrese ubicación del equipo</span>
+    </p>
+    <p>
+      <label for="description"><small><strong>Descripción</strong></small></label>
+      <i class="fa fa-check-circle check" *ngIf="description.valid"></i>
+      <i class="fa fa-exclamation-circle uncheck" *ngIf="description.invalid && description.touched"></i>
+      <input class="form-control" type="text" name="class" #description="ngModel" [(ngModel)]="equipo.description"/>
+      <span class="aler alert-danger" id="alert-msg" *ngIf="!description.valid && description.touched">Ingrese una descripción</span>
+  </p>
+  <p>
+      <label for="feature"><small><strong>Caracteristicas</strong></small></label>
+      <i class="fa fa-check-circle check" *ngIf="feature.valid"></i>
+      <i class="fa fa-exclamation-circle uncheck" *ngIf="feature.invalid && feature.touched"></i>
+      <input class="form-control" type="text" name="period" #feature="ngModel" [(ngModel)]="equipo.feature"/>
+      <span class="aler alert-danger" id="alert-msg" *ngIf="!feature.valid && feature.touched">Caracteristicas del equipo</span>
+  </p>
+    <button type="submit" id="register-button" class="btn btn-warning" [disabled]="!registerForm.valid"><small><strong>Registrar</strong></small></button>
+
+</form>

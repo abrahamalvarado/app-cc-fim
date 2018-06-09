@@ -4,7 +4,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 import { AuthService } from '../../auth-module/services/auth.service';
 import * as firebase from 'firebase';
 import { AlumnoService } from '../../services/alumno.service';
-import { Alumno } from '../../models/alumnos'
+import { Alumno } from '../../models/alumno'
 
 @Component({
   selector: 'actualizar-alumnos',
