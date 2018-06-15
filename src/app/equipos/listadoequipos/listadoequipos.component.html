@@ -48,8 +48,8 @@
             <td>{{equipo.place}}</td>
             <td>{{equipo.status}}</td>
             <td><div>
-                <a class="btn btn-primary btn-rounded btn-xs" title="Editar" routerLink="/editaraequipo/{{ equipo.key }}"><i class="fa fa-pencil"></i></a>
-                <a class="btn btn-danger btn-rounded btn-xs" (click)="eliminarAlumno(equipo.key)" title="Eliminar"><i class="fa fa-trash"></i></a>
+                <a class="btn btn-primary btn-rounded btn-xs" title="Editar" routerLink="/editarequipo/{{ equipo.key }}"><i class="fa fa-pencil"></i></a>
+                <a class="btn btn-danger btn-rounded btn-xs" (click)="eliminarEquipo(equipo.key)" title="Eliminar"><i class="fa fa-trash"></i></a>
             </div></td>
           </tr>
         </tbody>

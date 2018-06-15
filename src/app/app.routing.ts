@@ -13,6 +13,7 @@ import { ListadoserviciosComponent } from './servicios/listadoservicios/listados
 import { RegistroAlumnosComponent } from './alumnos/registro/registro.component';
 import { ActualizarAlumnosComponent } from './alumnos/actualizar/actualizar.component';
 import { RegistroEquiposComponent } from './equipos/registro/registro.component';
+import { ActualizarEquiposComponent } from './equipos/actualizar/actualizar.component';
 
 const appRoutes: Routes = [
   { path: 'usuarios', component: ListadousuariosComponent},
@@ -22,6 +23,7 @@ const appRoutes: Routes = [
   { path: 'registroalumno', component: RegistroAlumnosComponent},
   { path: 'registroequipo', component: RegistroEquiposComponent},
   { path: 'editaralumno/:id', component: ActualizarAlumnosComponent},
+  { path: 'editarequipo/:id', component: ActualizarEquiposComponent},
   { path: '', component: InicioComponent},
   { path: '', redirectTo: 'home', pathMatch: 'full'},
   { path: 'home', component: InicioComponent},

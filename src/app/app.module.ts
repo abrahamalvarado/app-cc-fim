@@ -17,6 +17,7 @@ import { ListadoserviciosComponent } from './servicios/listadoservicios/listados
 import { RegistroAlumnosComponent } from './alumnos/registro/registro.component';
 import { ActualizarAlumnosComponent } from './alumnos/actualizar/actualizar.component';
 import { RegistroEquiposComponent } from './equipos/registro/registro.component';
+import { ActualizarEquiposComponent } from './equipos/actualizar/actualizar.component';
 
 // server modules
 import { AngularFireModule } from 'angularfire2';
@@ -47,7 +48,8 @@ export const firebaseConfig = {
     ListadoserviciosComponent,
     RegistroAlumnosComponent,
     ActualizarAlumnosComponent,
-    RegistroEquiposComponent
+    RegistroEquiposComponent,
+    ActualizarEquiposComponent
   ],
   imports: [
     BrowserModule,
