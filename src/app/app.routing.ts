@@ -14,14 +14,18 @@ import { RegistroAlumnosComponent } from './alumnos/registro/registro.component'
 import { ActualizarAlumnosComponent } from './alumnos/actualizar/actualizar.component';
 import { RegistroEquiposComponent } from './equipos/registro/registro.component';
 import { ActualizarEquiposComponent } from './equipos/actualizar/actualizar.component';
+import { ListadoprestamosComponent } from './prestamos/listadoprestamos/listadoprestamos.component';
+import { RegistroPrestamosComponent } from './prestamos/registro/registro.component';
 
 const appRoutes: Routes = [
   { path: 'usuarios', component: ListadousuariosComponent},
   { path: 'alumnos', component: ListadoalumnosComponent},
   { path: 'equipos', component: ListadoequiposComponent},
   { path: 'servicios', component: ListadoserviciosComponent},
+  { path: 'prestamos', component: ListadoprestamosComponent},
   { path: 'registroalumno', component: RegistroAlumnosComponent},
   { path: 'registroequipo', component: RegistroEquiposComponent},
+  { path: 'registroprestamo', component: RegistroPrestamosComponent},
   { path: 'editaralumno/:id', component: ActualizarAlumnosComponent},
   { path: 'editarequipo/:id', component: ActualizarEquiposComponent},
   { path: '', component: InicioComponent},

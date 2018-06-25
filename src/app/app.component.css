@@ -1,5 +1,6 @@
 #page-content-wrapper {
     width: 100%;
+    position: relative;
     position: absolute;
     padding: 15px;
     margin-left: 300px;
@@ -8,9 +9,9 @@
   @media(max-width:767px) {
     #page-content-wrapper {
         width: 100%;
-        position: relative;
+        position: absolute;
         padding: 15px;
-        margin-left: 15px;
+        margin-left: 10px;
       }
 
   }

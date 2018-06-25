@@ -48,7 +48,12 @@
         <label for="password"><small><strong>Carrera</strong></small></label>
         <i class="fa fa-check-circle check" *ngIf="class.valid"></i>
         <i class="fa fa-exclamation-circle uncheck" *ngIf="class.invalid && class.touched"></i>
-        <input class="form-control" type="text" name="class" #class="ngModel" [(ngModel)]="alumno.class" required/>
+        <select class="form-control" id="class" name="class" #class="ngModel" [(ngModel)]="alumno.class" required>
+            <option value="">Seleccione la Carrera...</option>
+            <option value="Civil">Ing. Civil</option>
+            <option value="Geodesia">Ing. Geodesia</option>
+            <option value="Software">Ing. Software</option>
+        </select>
         <span class="aler alert-danger" id="alert-msg" *ngIf="!class.valid && class.touched">Ingrese la carrera</span>
     </p>
     <p>

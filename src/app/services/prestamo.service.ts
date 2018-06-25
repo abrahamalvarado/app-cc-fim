@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
 import * as firebase from 'firebase';
-import { Equipo } from '../models/equipo'
+import { Prestamo } from '../models/prestamo';
 
 @Injectable()
-export class EquipoService {
+export class PrestamoService {
   private db = firebase.database();
-  public equipo: Equipo;
+  public prestamo : Prestamo;
 
   constructor(public afd: AngularFireDatabase) {}
 
-  nuevoEquipo(equipo) {
-    this.afd.list('/Equipos/').push(equipo);    
+  nuevoPrestamo(prestamo) {
+    this.afd.list('/Prestamos/').push(prestamo);    
   }
 
   snapshotToArray(snapshot){
@@ -24,9 +24,9 @@ export class EquipoService {
     return returnArr;
   }
 
-  getEquipos(){
+  getPrestamos(){
     let promise = new Promise((resolve, reject) =>{
-      firebase.database().ref('/Equipos/').on('value', (snapshot) => {
+      firebase.database().ref('/Prestamos/').on('value', (snapshot) => {
         try{
           resolve(this.snapshotToArray(snapshot));
         }catch(err){
@@ -37,10 +37,10 @@ export class EquipoService {
     });
     return promise
   }
-  
-  getEquipo(key){
+
+  getPrestamo(key){
     let promise = new Promise((resolve, reject) =>{
-      firebase.database().ref('/Equipos/').orderByKey().equalTo(key).on('value', (snapshot) => {
+      firebase.database().ref('/Prestamos/').orderByKey().equalTo(key).on('value', (snapshot) => {
         try{
           resolve(this.snapshotToArray(snapshot));
         }catch(err){
@@ -51,12 +51,12 @@ export class EquipoService {
     return promise;
   }
 
-  updateEquipo(equipo){
+  updatePrestamo(prestamo){
     let promise = new Promise((resolve, reject) =>{
-      firebase.database().ref('/Equipos/').equalTo(equipo.key).on('value', (snapshot) => {
+      firebase.database().ref('/Prestamos/').equalTo(prestamo.key).on('value', (snapshot) => {
         try{
-          this.afd.list('/Equipos/').update(equipo.key, equipo);
-          resolve('Equipo actualizado');
+          this.afd.list('/Prestamos/').update(prestamo.key, prestamo);
+          resolve('Prestamo actualizado');
         }catch(err){
           reject(err)
         }
@@ -65,5 +65,4 @@ export class EquipoService {
     return promise;
   }
 
-  
 }

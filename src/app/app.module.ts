@@ -18,6 +18,8 @@ import { RegistroAlumnosComponent } from './alumnos/registro/registro.component'
 import { ActualizarAlumnosComponent } from './alumnos/actualizar/actualizar.component';
 import { RegistroEquiposComponent } from './equipos/registro/registro.component';
 import { ActualizarEquiposComponent } from './equipos/actualizar/actualizar.component';
+import { ListadoprestamosComponent } from './prestamos/listadoprestamos/listadoprestamos.component'
+import { RegistroPrestamosComponent } from './prestamos/registro/registro.component';
 
 // server modules
 import { AngularFireModule } from 'angularfire2';
@@ -25,7 +27,9 @@ import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/dat
 
 //services
 import { AlumnoService } from './services/alumno.service'
-import { EquipoService } from './services/equipo.service'
+import { EquipoService } from './services/equipo.service';
+import { PrestamoService } from './services/prestamo.service';
+
 export const firebaseConfig = {
   fire: {
     apiKey: 'AIzaSyBUxwERyaYEuSKUP0R5lwaslH0Mpk5udSo',
@@ -49,7 +53,9 @@ export const firebaseConfig = {
     RegistroAlumnosComponent,
     ActualizarAlumnosComponent,
     RegistroEquiposComponent,
-    ActualizarEquiposComponent
+    ActualizarEquiposComponent,
+    ListadoprestamosComponent,
+    RegistroPrestamosComponent
   ],
   imports: [
     BrowserModule,
@@ -63,7 +69,8 @@ export const firebaseConfig = {
     AngularFireDatabase,
     appRoutingProviders,
     AlumnoService,
-    EquipoService
+    EquipoService,
+    PrestamoService
   ],
   bootstrap: [AppComponent]
 })

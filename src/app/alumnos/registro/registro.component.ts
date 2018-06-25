@@ -26,7 +26,7 @@ export class RegistroAlumnosComponent implements OnInit {
       class: '',
       classroom: '',
       email: '',
-      status: ''
+      status: 'ACTIVO'
     }
   }
   
