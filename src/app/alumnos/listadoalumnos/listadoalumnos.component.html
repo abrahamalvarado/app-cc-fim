@@ -13,7 +13,7 @@
     </div>
     <hr>
     <div>
-      <a class="btn btn-primary pull-right" ><i class="fa fa-refresh"></i></a> 
+      <a class="btn btn-primary pull-right" (click)="refresh()"><i class="fa fa-refresh"></i></a> 
       <br>
       <br>
     </div>
@@ -30,26 +30,26 @@
           <tr>
             <th>#</th>
             <th>Nombre</th>
-            <th>Appelido</th>
             <th>Correo</th>
             <th>Num de control</th>
             <th>Grupo</th>
             <th>Carrera</th>
+            <th>Estado</th>
             <th>Acciones</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let alumno of alumnos; let i = index">
             <td>{{i}}</td>
-            <td>{{alumno.name}}</td>
-            <td>{{alumno.parentlastname}}</td>
+            <td>{{alumno.name}} {{alumno.parentlastname}}</td>
             <td>{{alumno.email}}</td>
             <td>{{alumno.numcontrol}}</td>
             <td>{{alumno.group}}</td>
             <td>{{alumno.class}}</td>
+            <td>{{alumno.status}}</td>
             <td><div>
                 <a class="btn btn-primary btn-rounded btn-xs" title="Editar" routerLink="/editaralumno/{{ alumno.key }}"><i class="fa fa-pencil"></i></a>
-                <a class="btn btn-danger btn-rounded btn-xs" (click)="eliminarAlumno(alumno.key)" title="Eliminar"><i class="fa fa-trash"></i></a>
+                <a class="btn btn-danger btn-rounded btn-xs" (click)="bajaAlumno(alumno.key)" title="Baja"><i class="fa fa-trash"></i></a>
             </div></td>
           </tr>
         </tbody>

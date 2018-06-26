@@ -1,0 +1,34 @@
+<h1>Registro de Prestamos</h1>
+<form class="form" #registerForm='ngForm' (ngSubmit)='register(registerForm)'>
+    <p>
+        <label for="equipo"><small><strong>Equipo</strong></small></label>
+        <i class="fa fa-check-circle check" *ngIf="equipo.valid"></i>
+        <i class="fa fa-exclamation-circle uncheck" *ngIf="equipo.invalid && equipo.touched"></i>
+        <select class="form-control" id="equipo" name="equipo" #equipo="ngModel" [(ngModel)]="prestamo.equipment" required>
+          <option value="">Seleccione un Equipo...</option>
+          <option *ngFor="let equipo of equipos" [value]="equipo.name">{{equipo.name}}</option>
+        </select>
+        <span class="aler alert-danger" id="alert-msg" *ngIf="!equipo.valid && equipo.touched">Seleccione el equipo</span>
+        </p>
+    <p>
+    <p>
+      <label for="student"><small><strong>Alumno</strong></small></label>
+      <i class="fa fa-check-circle check" *ngIf="student.valid"></i>
+      <i class="fa fa-exclamation-circle uncheck" *ngIf="student.invalid && student.touched"></i>
+      <select class="form-control" id="student" name="student" #student="ngModel" [(ngModel)]="prestamo.student" required>
+        <option value="">Seleccione un Alumno...</option>
+        <option *ngFor="let alumno of alumnos" [value]="alumno.name">{{alumno.name}} {{ alumno.parentlastname }} {{ alumno.motherlastname }} </option>
+      </select>
+      <span class="aler alert-danger" id="alert-msg" *ngIf="!student.valid && student.touched">Seleccione el alumno</span>
+    </p>
+    <p>
+        <label for="date"><small><strong>Fecha</strong></small></label>
+        <i class="fa fa-check-circle check" *ngIf="date.valid"></i>
+        <i class="fa fa-exclamation-circle uncheck" *ngIf="date.invalid && date.touched"></i>
+        <input class="form-control" type="date" name="date" #date="ngModel" [(ngModel)]="prestamo.date" required/>
+        <span class="aler alert-danger" id="alert-msg" *ngIf="!date.valid && date.touched">Ingrese fecha del prestamo</span>
+    </p>
+
+    <button type="submit" id="register-button" class="btn btn-warning" [disabled]="!registerForm.valid"><small><strong>Registrar</strong></small></button>
+
+</form>

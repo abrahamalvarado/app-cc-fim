@@ -1,9 +1,9 @@
 <div class="row">
   <div class="col-lg-8 col-md-8 col-sm-8">
-    <h2 class="text-center"><i class="fa fa-desktop"></i> Listado de Equipos</h2>
+    <h2 class="text-center"><i class="fa fa-address-card fa-lg"></i> Listado de Prestamos</h2>
     <hr>
     <div class="btn-group btn-group-justified">
-      <a routerLink="/registroequipo" class="btn btn-success"><i class="fa fa-desktop"></i> <i class="fa fa-plus"></i> Registrar Equipo</a>
+      <a routerLink="/registroprestamo" class="btn btn-success"><i class="fa fa-handshake-o"></i> <i class="fa fa-plus"></i> Registrar Prestamo</a>
     </div>
     <hr>
       
@@ -29,27 +29,23 @@
         <thead>
           <tr>
             <th>#</th>
-            <th>Nombre</th>
-            <th>Marca</th>
-            <th>Modelo</th>
-            <th>Tipo</th>
-            <th>Ubicación</th>
+            <th>Equipo</th>
+            <th>Alumno</th>
+            <th>Fecha</th>
             <th>Estado</th>
             <th>Acciones</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let equipo of equipos; let i = index">
+          <tr *ngFor="let prestamo of prestamos; let i = index">
             <td>{{i + 1}}</td>
-            <td>{{equipo.name}}</td>
-            <td>{{equipo.brand}}</td>
-            <td>{{equipo.model}}</td>
-            <td>{{equipo.type}}</td>
-            <td>{{equipo.place}}</td>
-            <td>{{equipo.status}}</td>
+            <td>{{prestamo.equipment}}</td>
+            <td>{{prestamo.student}}</td>
+            <td>{{prestamo.date}}</td>
+            <td>{{prestamo.status}}</td>
             <td><div>
-                <a class="btn btn-primary btn-rounded btn-xs" title="Editar" routerLink="/editarequipo/{{ equipo.key }}"><i class="fa fa-pencil"></i></a>
-                <a class="btn btn-danger btn-rounded btn-xs" (click)="bajaEquipo(equipo.key)" title="Baja"><i class="fa fa-trash"></i></a>
+                <a class="btn btn-primary btn-rounded btn-xs" (click)="entrego(prestamo.key)" title="Entrego"><i class="fa fa-check"></i></a>
+                <a class="btn btn-danger btn-rounded btn-xs" (click)="eliminarPrestamo(prestamo.key)" title="Eliminar"><i class="fa fa-trash"></i></a>
             </div></td>
           </tr>
         </tbody>

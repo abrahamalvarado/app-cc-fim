@@ -26,7 +26,16 @@
     <label for="type"><small><strong>Tipo</strong></small></label>
     <i class="fa fa-check-circle check" *ngIf="type.valid"></i>
     <i class="fa fa-exclamation-circle uncheck" *ngIf="type.invalid && type.touched"></i>
-    <input class="form-control" type="text" name="type" #type="ngModel" [(ngModel)]="equipo.type" required/>
+    <select class="form-control" id="type" name="type" #type="ngModel" [(ngModel)]="equipo.type" required>
+        <option value="">Seleccione el Tipo...</option>
+        <option value="Proyector">Proyector</option>
+        <option value="PC">PC</option>
+        <option value="Monitor">Monitor</option>
+        <option value="Bocinas">Bocinas</option>
+        <option value="Router">Router</option>
+        <option value="Switch">Switch</option>
+        <option value="Laptop">Laptop</option>
+    </select>
     <span class="aler alert-danger" id="alert-msg" *ngIf="!type.valid && type.touched">Ingrese el tipo de hardware</span>
     
     </p>
@@ -38,7 +47,7 @@
     <span class="aler alert-danger" id="alert-msg" *ngIf="!serial.valid && serial.touched">Ingrese el serial del fabricante</span>
     </p>
     <p>
-        <label for="date"><small><strong>fecha</strong></small></label>
+        <label for="date"><small><strong>Fecha</strong></small></label>
         <i class="fa fa-check-circle check" *ngIf="date.valid"></i>
         <i class="fa fa-exclamation-circle uncheck" *ngIf="date.invalid && date.touched"></i>
         <input class="form-control" type="text" name="date" #date="ngModel" [(ngModel)]="equipo.date" required/>
@@ -48,7 +57,16 @@
         <label for="place"><small><strong>Ubicación</strong></small></label>
         <i class="fa fa-check-circle check" *ngIf="place.valid"></i>
         <i class="fa fa-exclamation-circle uncheck" *ngIf="place.invalid && place.touched"></i>
-        <input class="form-control" type="text" name="place" #place="ngModel" [(ngModel)]="equipo.place" required/>
+        <select class="form-control" id="place" name="place" #place="ngModel" [(ngModel)]="equipo.place" required>
+            <option value="">Seleccione la Ubicación...</option>
+            <option value="CC1">CC1</option>
+            <option value="CC2">CC2</option>
+            <option value="CC3">CC3</option>
+            <option value="CC4">CC4</option>
+            <option value="Administración de CC">Administración de CC</option>
+            <option value="Dirección">Dirección</option>
+            <option value="Servicios Escolares">Servicios Escolares</option>
+        </select>
         <span class="aler alert-danger" id="alert-msg" *ngIf="!place.valid && place.touched">Ingrese ubicación del equipo</span>
     </p>
     <p>
