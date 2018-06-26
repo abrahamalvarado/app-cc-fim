@@ -38,6 +38,20 @@ export class AlumnoService {
     return promise
   }
 
+  getAvailableAlumnos(){
+    let promise = new Promise((resolve, reject) =>{
+      firebase.database().ref('/Alumnos/').orderByChild('status').equalTo("ACTIVO").on('value', (snapshot) => {
+        try{
+          resolve(this.snapshotToArray(snapshot));
+        }catch(err){
+          reject(err);
+        }
+      });
+
+    });
+    return promise
+  }
+
   getAlumno(key){
     let promise = new Promise((resolve, reject) =>{
       firebase.database().ref('/Alumnos/').orderByKey().equalTo(key).on('value', (snapshot) => {
