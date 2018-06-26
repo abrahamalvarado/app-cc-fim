@@ -3,7 +3,7 @@
     position: relative;
     position: absolute;
     padding: 15px;
-    margin-left: 300px;
+    padding-left: 300px;
   }
 
   @media(max-width:767px) {
