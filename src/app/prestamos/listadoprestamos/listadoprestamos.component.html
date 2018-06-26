@@ -31,7 +31,8 @@
             <th>#</th>
             <th>Equipo</th>
             <th>Alumno</th>
-            <th>Fecha</th>
+            <th>Fecha Prestamo</th>
+            <th>Fecha Entrega</th>
             <th>Estado</th>
             <th>Acciones</th>
           </tr>
@@ -41,10 +42,13 @@
             <td>{{i + 1}}</td>
             <td>{{prestamo.equipment}}</td>
             <td>{{prestamo.student}}</td>
-            <td>{{prestamo.date}}</td>
+            <td>{{prestamo.outtimestamp | date: 'd/MM/yyyy, h:mm a'}}</td>
+            <td>{{prestamo.intimestamp | date: 'd/MM/yyyy, h:mm a'}}</td>
             <td>{{prestamo.status}}</td>
             <td><div>
-                <a class="btn btn-primary btn-rounded btn-xs" (click)="entrego(prestamo.key)" title="Entrego"><i class="fa fa-check"></i></a>
+                <a class="btn btn-primary btn-rounded btn-xs" title="Detalle"><i class="fa fa-info-circle"></i></a>
+                <a *ngIf="prestamo.status=='PENDIENTE'" class="btn btn-success btn-rounded btn-xs" (click)="entrego(prestamo.key)" title="Entrego"><i class="fa fa-check"></i></a>
+                <a *ngIf="prestamo.status=='ENTREGADO'" class="btn btn-default btn-rounded btn-xs"><i class="fa fa-check"></i></a>
                 <a class="btn btn-danger btn-rounded btn-xs" (click)="eliminarPrestamo(prestamo.key)" title="Eliminar"><i class="fa fa-trash"></i></a>
             </div></td>
           </tr>

@@ -37,6 +37,20 @@ export class EquipoService {
     });
     return promise
   }
+
+  getFreeEquipos(){
+    let promise = new Promise((resolve, reject) =>{
+      firebase.database().ref('/Equipos/').orderByChild('status').equalTo("DISPONIBLE").on('value', (snapshot) => {
+        try{
+          resolve(this.snapshotToArray(snapshot));
+        }catch(err){
+          reject(err);
+        }
+      });
+
+    });
+    return promise
+  }
   
   getEquipo(key){
     let promise = new Promise((resolve, reject) =>{

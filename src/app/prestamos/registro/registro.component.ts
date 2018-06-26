@@ -20,14 +20,17 @@ export class RegistroPrestamosComponent implements OnInit {
 
   constructor(private prestamoService: PrestamoService, private equipoService: EquipoService, private alumnoService: AlumnoService, private router: Router) {
     this.prestamo = {
+      _idequipment: '',
+      _idstudent: '',
       key: '',
-      equipment: '',
       student: '',
-      date: '',
+      equipment: '',
+      outtimestamp: '',
+      intimestamp: '',
       status: 'PENDIENTE'
     }
 
-    this.equipoService.getEquipos().then(response =>{
+    this.equipoService.getFreeEquipos().then(response =>{
       this.equipos = response;
       console.log(this.equipos);
     }).catch(err =>{
@@ -47,9 +50,19 @@ export class RegistroPrestamosComponent implements OnInit {
   }
 
   register(prestamo){
-    this.prestamoService.nuevoPrestamo(this.prestamo);
-    this.router.navigate(["prestamos"]);
-    console.log(this.prestamo);
+    this.equipoService.getEquipo(this.prestamo._idequipment).then(response =>{
+      let equipo: any;
+      equipo = response[0];
+      equipo['status'] = 'OCUPADO';
+      this.prestamo['equipment'] = equipo.name; 
+      this.prestamo['outtimestamp'] = firebase.database.ServerValue.TIMESTAMP;
+      this.equipoService.updateEquipo(equipo);
+      this.prestamoService.nuevoPrestamo(this.prestamo);
+      this.router.navigate(["prestamos"]);
+    }).catch(err =>{
+      console.log(err);
+      alert('Error de conexión');
+    })
   }
 
 }
