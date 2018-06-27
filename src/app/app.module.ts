@@ -30,6 +30,10 @@ import { AlumnoService } from './services/alumno.service'
 import { EquipoService } from './services/equipo.service';
 import { PrestamoService } from './services/prestamo.service';
 
+import { SearchPrestamoPipe } from './pipes/searchprestamo.pipe';
+import { SearchEquipoPipe } from './pipes/searchequipo.pipe';
+import { SearchAlumnoPipe } from './pipes/searchalumno.pipe';
+
 export const firebaseConfig = {
   fire: {
     apiKey: 'AIzaSyBUxwERyaYEuSKUP0R5lwaslH0Mpk5udSo',
@@ -55,7 +59,10 @@ export const firebaseConfig = {
     RegistroEquiposComponent,
     ActualizarEquiposComponent,
     ListadoprestamosComponent,
-    RegistroPrestamosComponent
+    RegistroPrestamosComponent,
+    SearchPrestamoPipe,
+    SearchEquipoPipe,
+    SearchAlumnoPipe
   ],
   imports: [
     BrowserModule,

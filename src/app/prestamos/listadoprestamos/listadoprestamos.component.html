@@ -8,7 +8,7 @@
     <hr>
       
     <div class="input-group md-form form-sm form-2 pl-0">
-      <input class="form-control my-0 py-1 grey-border" type="text" placeholder="Buscar" aria-label="buscar">
+      <input class="form-control my-0 py-1 grey-border" type="text" placeholder="Buscar" aria-label="buscar" [(ngModel)]="searching" />
       <span class="input-group-addon grey lighten-3" id="basic-addon1"><a><i class="fa fa-search text-grey" aria-hidden="true"></i></a></span>
     </div>
     <hr>
@@ -38,7 +38,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let prestamo of prestamos; let i = index">
+          <tr *ngFor="let prestamo of prestamos | searchPrestamo: searching; let i = index">
             <td>{{i + 1}}</td>
             <td>{{prestamo.equipment}}</td>
             <td>{{prestamo.student}}</td>
@@ -54,6 +54,7 @@
           </tr>
         </tbody>
       </table>
+      
 
 </div>
 </div>

@@ -11,7 +11,8 @@ import { Equipo } from '../../models/equipo';
 })
 export class ListadoprestamosComponent implements OnInit {
   public prestamos: any;
-  prestamo: any;
+  public prestamo: any;
+  public searching: any;
   constructor(private prestamoService: PrestamoService, private equipoService: EquipoService) { }
 
   ngOnInit() {
