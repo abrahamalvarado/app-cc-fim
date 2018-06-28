@@ -16,6 +16,10 @@ import { RegistroEquiposComponent } from './equipos/registro/registro.component'
 import { ActualizarEquiposComponent } from './equipos/actualizar/actualizar.component';
 import { ListadoprestamosComponent } from './prestamos/listadoprestamos/listadoprestamos.component';
 import { RegistroPrestamosComponent } from './prestamos/registro/registro.component';
+import { CarrerasComponent } from './catalogos/carreras/carreras.component';
+import { GruposComponent } from './catalogos/grupos/grupos.component';
+import { CentroscomputoComponent } from './catalogos/centroscomputo/centroscomputo.component';
+import { TipohardwareComponent } from './catalogos/tipohardware/tipohardware.component';
 
 const appRoutes: Routes = [
   { path: 'usuarios', component: ListadousuariosComponent},
@@ -23,6 +27,10 @@ const appRoutes: Routes = [
   { path: 'equipos', component: ListadoequiposComponent},
   { path: 'servicios', component: ListadoserviciosComponent},
   { path: 'prestamos', component: ListadoprestamosComponent},
+  { path: 'cat/carreras', component: CarrerasComponent},
+  { path: 'cat/grupos', component: GruposComponent},
+  { path: 'cat/centros', component: CentroscomputoComponent},
+  { path: 'cat/tipohardware', component: TipohardwareComponent},
   { path: 'registroalumno', component: RegistroAlumnosComponent},
   { path: 'registroequipo', component: RegistroEquiposComponent},
   { path: 'registroprestamo', component: RegistroPrestamosComponent},

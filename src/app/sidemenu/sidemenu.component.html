@@ -44,14 +44,14 @@
                   </a>
                 </li>
 
-                <li data-toggle="collapse" data-target="#catalogos" class="collapsed">
+                <li data-toggle="collapse" data-target="#catalogos" class="collapsed" >
                   <i class="fa fa-book fa-lg"></i> Catálogos <span class="arrow"></span>
                 </li>  
                 <ul class="sub-menu collapse" id="catalogos">
-                  <li>Carreras</li>
-                  <li>Grupos</li>
-                  <li>Centros de Cómputo</li>
-                  <li>Tipo de Hardware</li>
+                  <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"> <a routerLink="/cat/carreras">Carreras</a></li>
+                  <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"> <a routerLink="/cat/grupos">Grupos</a></li>
+                  <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"> <a routerLink="/cat/centros">Centros de Cómputo</a></li>
+                  <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"> <a routerLink="/cat/tipohardware">Tipos de Hardware</a></li>
                 </ul>
 
                 <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"  *ngIf="!auth.authenticated">
