@@ -12,6 +12,7 @@ import { EquipoService } from '../../services/equipo.service';
 export class ListadoequiposComponent implements OnInit {
   public equipos: any;
   equipo: any;
+  public searching: any;
   constructor(private equipoService: EquipoService) { }
 
   ngOnInit() {

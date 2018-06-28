@@ -35,6 +35,10 @@ import { GruposComponent } from './catalogos/grupos/grupos.component';
 import { CentroscomputoComponent } from './catalogos/centroscomputo/centroscomputo.component';
 import { TipohardwareComponent } from './catalogos/tipohardware/tipohardware.component';
 
+import { SearchPrestamoPipe } from './pipes/searchprestamo.pipe';
+import { SearchEquipoPipe } from './pipes/searchequipo.pipe';
+import { SearchAlumnoPipe } from './pipes/searchalumno.pipe';
+
 export const firebaseConfig = {
   fire: {
     apiKey: 'AIzaSyBUxwERyaYEuSKUP0R5lwaslH0Mpk5udSo',
@@ -64,7 +68,10 @@ export const firebaseConfig = {
     CarrerasComponent,
     GruposComponent,
     CentroscomputoComponent,
-    TipohardwareComponent
+    TipohardwareComponent,
+    SearchPrestamoPipe,
+    SearchEquipoPipe,
+    SearchAlumnoPipe
   ],
   imports: [
     BrowserModule,

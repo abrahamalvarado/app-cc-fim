@@ -26,7 +26,7 @@ export class PrestamoService {
 
   getPrestamos(){
     let promise = new Promise((resolve, reject) =>{
-      firebase.database().ref('/Prestamos/').on('value', (snapshot) => {
+     firebase.database().ref('/Prestamos/').on('value', (snapshot) => {
         try{
           resolve(this.snapshotToArray(snapshot));
         }catch(err){

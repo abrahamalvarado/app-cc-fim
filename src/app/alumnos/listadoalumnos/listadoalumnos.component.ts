@@ -11,7 +11,8 @@ import { AlumnoService } from '../../services/alumno.service';
 })
 export class ListadoalumnosComponent implements OnInit {
   public alumnos: any;
-  alumno: any;
+  public alumno: any;
+  public searching: any;
   constructor(private alumnoService: AlumnoService) { }
 
   ngOnInit() {
