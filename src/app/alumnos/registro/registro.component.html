@@ -37,25 +37,29 @@
     <input class="form-control" type="text" name="numcontrol" #numcontrol="ngModel" [(ngModel)]="alumno.numcontrol" required/>
     <span class="aler alert-danger" id="alert-msg" *ngIf="!numcontrol.valid && numcontrol.touched">Número de control obligatorio</span>
     </p>
-    <p>
-        <label for="group"><small><strong>Grupo</strong></small></label>
-        <i class="fa fa-check-circle check" *ngIf="group.valid"></i>
-        <i class="fa fa-exclamation-circle uncheck" *ngIf="group.invalid && group.touched"></i>
-        <input class="form-control" type="text" name="group" #group="ngModel" [(ngModel)]="alumno.group" required/>
-        <span class="aler alert-danger" id="alert-msg" *ngIf="!group.valid && group.touched">Grupo obligatorio</span>
-    </p>
+    
     <p>
         <label for="class"><small><strong>Carrera</strong></small></label>
         <i class="fa fa-check-circle check" *ngIf="class.valid"></i>
         <i class="fa fa-exclamation-circle uncheck" *ngIf="class.invalid && class.touched"></i>
-        <select class="form-control" id="class" name="class" #class="ngModel" [(ngModel)]="alumno.class" required>
+        <select class="form-control" id="class" name="class" #class="ngModel" [(ngModel)]="alumno.idclass" required (ngModelChange)="valueChange($event)">
             <option value="">Seleccione la Carrera...</option>
-            <option value="Civil">Ing. Civil</option>
-            <option value="Geodesia">Ing. Geodesia</option>
-            <option value="Software">Ing. Software</option>
+            <option *ngFor="let carrera of carreras" [value]="carrera.key">{{carrera.career}}</option>
         </select>
-        <span class="aler alert-danger" id="alert-msg" *ngIf="!class.valid && class.touched">Ingrese la carrera</span>
+        <span class="aler alert-danger" id="alert-msg" *ngIf="!class.valid && class.touched">Carrera obligatoria</span>
     </p>
+
+    <p>
+        <label for="group"><small><strong>Grupo</strong></small></label>
+        <i class="fa fa-check-circle check" *ngIf="group.valid"></i>
+        <i class="fa fa-exclamation-circle uncheck" *ngIf="group.invalid && group.touched"></i>
+        <select class="form-control" id="group" name="group" #group="ngModel" [(ngModel)]="alumno.idgroup" required>
+            <option value="">Seleccione la Carrera...</option>
+            <option *ngFor="let grupo of grupos" [value]="grupo.key">{{grupo.group}}</option>
+        </select>
+        <span class="aler alert-danger" id="alert-msg" *ngIf="!group.valid && group.touched">Grupo obligatorio</span>
+    </p>
+
     <p>
         <label for="period"><small><strong>Semestre</strong></small></label>
         <i class="fa fa-check-circle check" *ngIf="period.valid"></i>

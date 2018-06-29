@@ -101,6 +101,20 @@ export class CatalogosService {
     return promise;
   }
 
+  getGrupoxCarrera(idcareer){
+    let promise = new Promise((resolve, reject) =>{
+      firebase.database().ref('/Catalogos/Grupos/').orderByChild('idcareer').equalTo(idcareer).on('value', (snapshot) => {
+        try{
+          resolve(this.snapshotToArray(snapshot));
+        }catch(err){
+          reject(err);
+        }
+      });
+
+    });
+    return promise
+  }
+
   updateGrupo(grupo){
     let promise = new Promise((resolve, reject) =>{
       firebase.database().ref('/Catalogos/Grupos/').equalTo(grupo.key).on('value', (snapshot) => {

@@ -4,8 +4,10 @@ export interface Alumno {
   name?: any;
   parentlastname?: any;
   motherlastname?: any;
+  idgroup?: any;
   group?: any;
   period?: any;
+  idclass?: any;
   class?: any;
   classroom?: any;
   email?: any;
